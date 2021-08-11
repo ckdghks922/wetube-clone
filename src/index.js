@@ -1,18 +1,20 @@
 import express from "express";
+import morgan from "morgan";
 
 const PORT = 4000;
 const app = express();
+const logger = morgan("dev");
 
-const logger = (req, res, next) => {
-  console.log(`${req.method}: ${req.url}`);
-  next();
+const handleHome = (req, res) => {
+  return res.send("I love Home!");
+};
+const handleLogin = (req, res) => {
+  return res.send("Login");
 };
 
-const handleGoHome = (req, res) => {
-  return res.send("I love MiddleWares!");
-};
-
-app.get("/", logger, handleGoHome);
+app.use(logger);
+app.get("/", handleHome);
+app.get("/login", handleLogin);
 
 const handleListening = () => {
   console.log(`Server Listening on port http://localhost:${PORT}`);

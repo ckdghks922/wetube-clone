@@ -17,6 +17,7 @@
   "homepage": "https://github.com/ckdghks922/wetube-clone#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "yarn": "^1.22.11"
   },
