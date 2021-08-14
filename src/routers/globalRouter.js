@@ -1,14 +1,8 @@
 import express from "express";
+import { handleJoin } from "../controllers/userController";
+import { handleHome } from "../controllers/videoController";
 
 const globalRouter = express.Router();
-
-const handleHome = (req, res) => {
-  return res.send("Home");
-};
-
-const handleJoin = (req, res) => {
-  return res.send("Join");
-};
 
 globalRouter.get("/", handleHome);
 globalRouter.get("/join", handleJoin);
