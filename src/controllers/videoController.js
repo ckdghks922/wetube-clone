@@ -7,8 +7,7 @@ export const handleSearch = (req, res) => {
 };
 
 export const handleSee = (req, res) => {
-  console.log(req.params);
-  return res.send("Watch Video");
+  return res.send(`Watch Video #${req.params.id}`);
 };
 
 export const handleEdit = (req, res) => {
