@@ -1,5 +1,31 @@
 export const handleHome = (req, res) => {
-  return res.render("home");
+  const videos = [
+    {
+      title: "First Video",
+      rating: 5,
+      comments: 2,
+      createdAt: "2 minutes ago",
+      views: 59,
+      id: 1,
+    },
+    {
+      title: "Second Video",
+      rating: 5,
+      comments: 2,
+      createdAt: "2 minutes ago",
+      views: 59,
+      id: 2,
+    },
+    {
+      title: "Third Video",
+      rating: 5,
+      comments: 2,
+      createdAt: "2 minutes ago",
+      views: 59,
+      id: 3,
+    },
+  ];
+  return res.render("home", { pageTitle: "Home", videos });
 };
 
 export const handleSearch = (req, res) => {
@@ -7,11 +33,11 @@ export const handleSearch = (req, res) => {
 };
 
 export const handleSee = (req, res) => {
-  return res.render("watch");
+  return res.render("watch", { pageTitle: "Watch" });
 };
 
 export const handleEdit = (req, res) => {
-  return res.render("edit");
+  return res.render("edit", { pageTitle: "Edit" });
 };
 
 export const handleDelete = (req, res) => {
