@@ -1,5 +1,5 @@
 export const handleHome = (req, res) => {
-  return res.send("Home");
+  return res.render("home");
 };
 
 export const handleSearch = (req, res) => {
@@ -7,11 +7,11 @@ export const handleSearch = (req, res) => {
 };
 
 export const handleSee = (req, res) => {
-  return res.send(`Watch Video #${req.params.id}`);
+  return res.render("watch");
 };
 
 export const handleEdit = (req, res) => {
-  return res.send("Edit Video");
+  return res.render("edit");
 };
 
 export const handleDelete = (req, res) => {
