@@ -18,6 +18,6 @@ export const handleLogout = (req, res) => {
   res.send("Logout");
 };
 
-export const handleSee = (req, res) => {
+export const handleWatch = (req, res) => {
   res.send("See User");
 };

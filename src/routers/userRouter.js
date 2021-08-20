@@ -3,7 +3,7 @@ import {
   handleEdit,
   handleDelete,
   handleLogout,
-  handleSee,
+  handleWatch,
 } from "../controllers/userController";
 
 const userRouter = express.Router();
@@ -11,6 +11,6 @@ const userRouter = express.Router();
 userRouter.get("/edit", handleEdit);
 userRouter.get("/delete", handleDelete);
 userRouter.get("/logout", handleLogout);
-userRouter.get(":id", handleSee);
+userRouter.get(":id", handleWatch);
 
 export default userRouter;
