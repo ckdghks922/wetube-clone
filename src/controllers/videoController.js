@@ -39,10 +39,15 @@ export const handleWatch = (req, res) => {
   return res.render("watch", { pageTitle: `Watching: ${video.title}`, video });
 };
 
-export const handleEdit = (req, res) => {
+export const handleGetEdit = (req, res) => {
   const { id } = req.params;
   const video = videos[id - 1];
   return res.render("edit", { pageTitle: `Editing: ${video.title}`, video });
+};
+
+export const handlePostEdit = (req, res) => {
+  const { id } = req.params;
+  return res.redirect(`/videos/${id}`);
 };
 
 export const handleDelete = (req, res) => {

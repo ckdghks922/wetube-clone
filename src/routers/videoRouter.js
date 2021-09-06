@@ -1,16 +1,17 @@
 import express from "express";
 import {
-  handleWatch,
-  handleEdit,
-  handleDelete,
   handleUpload,
+  handleWatch,
+  handleGetEdit,
+  handlePostEdit,
+  handleDelete,
 } from "../controllers/videoController";
 
 const videoRouter = express.Router();
 
 videoRouter.get("/upload", handleUpload);
 videoRouter.get("/:id(\\d+)", handleWatch);
-videoRouter.get("/:id(\\d+)/edit", handleEdit);
+videoRouter.route("/:id(\\d+)/edit").get(handleGetEdit).post(handlePostEdit);
 videoRouter.get("/:id(\\d+)/delete", handleDelete);
 
 export default videoRouter;
