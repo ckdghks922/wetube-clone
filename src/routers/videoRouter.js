@@ -1,6 +1,7 @@
 import express from "express";
 import {
-  handleUpload,
+  handleGetUpload,
+  handlePostUpload,
   handleWatch,
   handleGetEdit,
   handlePostEdit,
@@ -9,8 +10,8 @@ import {
 
 const videoRouter = express.Router();
 
-videoRouter.get("/upload", handleUpload);
 videoRouter.get("/:id(\\d+)", handleWatch);
+videoRouter.route("/upload").get(handleGetUpload).post(handlePostUpload);
 videoRouter.route("/:id(\\d+)/edit").get(handleGetEdit).post(handlePostEdit);
 videoRouter.get("/:id(\\d+)/delete", handleDelete);
 

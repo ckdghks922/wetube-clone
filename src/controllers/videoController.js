@@ -47,6 +47,8 @@ export const handleGetEdit = (req, res) => {
 
 export const handlePostEdit = (req, res) => {
   const { id } = req.params;
+  const { title } = req.body;
+  videos[id - 1].title = title;
   return res.redirect(`/videos/${id}`);
 };
 
@@ -54,6 +56,20 @@ export const handleDelete = (req, res) => {
   return res.send("Delete Video");
 };
 
-export const handleUpload = (req, res) => {
-  return res.send("Upload Video");
+export const handleGetUpload = (req, res) => {
+  return res.render("upload", { pageTitle: "Upload Video" });
+};
+
+export const handlePostUpload = (req, res) => {
+  const { title } = req.body;
+  const newVideo = {
+    title,
+    rating: 0,
+    comments: 0,
+    createdAt: "just now",
+    views: 0,
+    id: videos.length + 1,
+  };
+  videos.push(newVideo);
+  return res.redirect("/");
 };
